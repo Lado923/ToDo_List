@@ -1,0 +1,60 @@
+html {
+    margin: 0;
+    padding: 0;
+}
+
+font-face {
+    font-family: 'RobotoCondensed-Regular';
+    src: url('assets/fonts/RobotoCondensed-Regular.woff2') format('woff2');
+    src: url('assets/fonts/RobotoCondensed-Regular.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+.container {
+    height: 80vh;
+    width: 50vw;
+    background-color:#A0838F;
+    border-radius: 25px;
+    margin:5vh auto;
+    text-align: center;
+    padding-top: 5vh;
+    font-family: 'RobotoCondensed-Regular';
+}
+
+h1 {
+    color: white;    
+}
+
+.tasks__input {
+    height: 50px;
+    width: 70%;
+    background-color: white;
+    border-radius: 25px;
+    margin:0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1vw;
+}
+
+.tasks__input input{
+    width: 80%;
+    border:none;
+    height: 80%;
+    padding: 0 1vw;
+    border-radius: 25px;
+}
+
+.tasks__input button{
+    width: 13%;
+   border: none;
+    height: 80%;
+    padding: 0 1vw;
+    border-radius: 25px;
+}
+
+.tasks__input button:active{
+    background-color:#A0838F;
+}
