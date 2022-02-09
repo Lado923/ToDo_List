@@ -1,9 +1,11 @@
 const todoInput = document.getElementById('add-tasks__text');
 const todoBtn = document.getElementById('add-tasks__btn');
-const todoBox = document.getElementById('tasks__inner');
+const todoBox = document.querySelector('.tasks__inner');
 
 let tasks = [];
 !localStorage.tasks ? tasks = [] : tasks = JSON.parse(localStorage.getItem('tasks'));
+
+let todoItemElems = [];
 
 function Task (description) {
         this.description = description;
@@ -12,10 +14,10 @@ function Task (description) {
 
 const createTemplate = (task, index) => {
 return `
-        <div class="tasks-list__item">
-             <div class="task__description"></div>
+        <div class="tasks-list__item ${task.completed ? 'checked' : ''}">
+             <div class="task__description">${task.description}</div>
              <div class="task__btn-box">
-                 <input type="checkbox" class="task__complete"> 
+                 <input onclick="completeTask(${index})" type="checkbox" class="task__complete" ${task.completed ? 'checked' : ''}> 
                  <button id="del-tasks__btn">Del</button>
              </div>
         </div>
@@ -25,21 +27,37 @@ return `
     const fillHtmlList = () => {
     todoBox.innerHTML = '';
     if (tasks.length > 0) {
-        tasks.forEach((item, index) {
-            todoBox.innerHTML += createTemplate(item, index);
-        })
+        tasks.forEach((item, index) => {
+            todoBox.innerHTML += createTemplate(item, index)
+        });
+        todoItemElems = document.querySelectorAll('.tasks-list__item');
     }
 
 }
+
+fillHtmlList();
 
 
     const updateLocal = () => {
     localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
+const completeTask = index => {
+    tasks[index].completed = !tasks[index].completed;
+    if(tasks[index].completed) {
+        todoItemElems[index].classList.add('checked');
+    } else {
+        todoItemElems[index].classList.remove('checked'); 
+    }
+    updateLocal();
+fillHtmlList();
+}
+
 todoBtn.addEventListener('click', () => {
 tasks.push(new Task(todoInput.value));
 updateLocal();
+fillHtmlList();
+todoInput.value = '';
 })
 
 console.log(tasks);

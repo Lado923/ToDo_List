@@ -14,9 +14,9 @@ html {
 
 .container {
     min-height: 62vh;
-    max-height: fit-content;
+    height: fit-content;
     width: 62vw; 
-    background-color:#A0838F;
+    background-color:#D3927D;
     border-radius: 25px;
     margin:5vh auto;
     text-align: center;
@@ -41,14 +41,15 @@ html {
 }
 
 h1 {
-color:#A0838F;
+color:#D3927D;
 text-align: center;
 }
 
 .tasks__container {
     display: flex;
     flex-direction: column;
-    height: 62vh;
+    min-height: 62vh;
+    height: fit-content;
 }
 
 .tasks__input{
@@ -89,7 +90,7 @@ text-align: center;
 }
 
 .tasks__input button:active{
-    background-color:#A0838F;
+    background-color:#D3927D;
 }
 
 /* styles for tasks */
@@ -145,5 +146,5 @@ border-bottom-right-radius: 25px;
 }
 
 .task__btn-box button:active{
-    background-color:#A0838F;
+    background-color:#D3927D;
 }
