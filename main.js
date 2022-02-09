@@ -10,7 +10,30 @@ function Task (description) {
         this.completed = false;
     }
 
-const updateLocal = () => {
+const createTemplate = (task, index) => {
+return `
+        <div class="tasks-list__item">
+             <div class="task__description"></div>
+             <div class="task__btn-box">
+                 <input type="checkbox" class="task__complete"> 
+                 <button id="del-tasks__btn">Del</button>
+             </div>
+        </div>
+       `
+}
+
+    const fillHtmlList = () => {
+    todoBox.innerHTML = '';
+    if (tasks.length > 0) {
+        tasks.forEach((item, index) {
+            todoBox.innerHTML += createTemplate(item, index);
+        })
+    }
+
+}
+
+
+    const updateLocal = () => {
     localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 

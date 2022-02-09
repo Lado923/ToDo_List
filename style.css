@@ -3,7 +3,7 @@ html {
     padding: 0;
 }
 
-font-face {
+@font-face {
     font-family: 'RobotoCondensed-Regular';
     src: url('assets/fonts/RobotoCondensed-Regular.woff2') format('woff2');
     src: url('assets/fonts/RobotoCondensed-Regular.woff') format('woff');
@@ -13,8 +13,9 @@ font-face {
 }
 
 .container {
-    height: 80vh;
-    width: 50vw;
+    min-height: 62vh;
+    max-height: fit-content;
+    width: 62vw; 
     background-color:#A0838F;
     border-radius: 25px;
     margin:5vh auto;
@@ -23,38 +24,126 @@ font-face {
     font-family: 'RobotoCondensed-Regular';
 }
 
-h1 {
-    color: white;    
+.container {
+    animation-duration: 2s;
+    animation-name: popup;
 }
 
-.tasks__input {
+@keyframes popup {
+    from{
+        height: 1vmin;
+        width: 1vmin;
+    }
+    to {
+        height: 62vh;
+        width: 62vw;  
+    }
+}
+
+h1 {
+color:#A0838F;
+text-align: center;
+}
+
+.tasks__container {
+    display: flex;
+    flex-direction: column;
+    height: 62vh;
+}
+
+.tasks__input{
     height: 50px;
-    width: 70%;
+    width: 62%;
     background-color: white;
     border-radius: 25px;
     margin:0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 1vw;
+    margin-top: 10px;
 }
 
 .tasks__input input{
-    width: 80%;
+    width: 62%;
     border:none;
-    height: 80%;
+    height: 100%;
     padding: 0 1vw;
-    border-radius: 25px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    outline:none;
+    font-size: 4vmin;
+    font-family: 'RobotoCondensed-Regular';
+}
+
+.tasks__input input::placeholder{
+    font-size: 2vmin;
 }
 
 .tasks__input button{
-    width: 13%;
-   border: none;
-    height: 80%;
+    width: 30%;
+    border: none;
+    height: 100%;
     padding: 0 1vw;
-    border-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
 }
 
 .tasks__input button:active{
+    background-color:#A0838F;
+}
+
+/* styles for tasks */
+
+.tasks-list__item {
+    height: 50px;
+    width: 62%;
+    background-color: white;
+    border-radius: 25px;
+    margin:0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.task__description{
+width: 62%;
+height: 100%;
+padding: 0 1vw;
+border-top-left-radius: 25px;
+border-bottom-left-radius: 25px;
+font-size: 4vmin;
+font-family: 'RobotoCondensed-Regular';
+}
+
+.task__btn-box {
+        width: 30%;
+        height: 100%;
+        border-top-right-radius: 25px;
+        border-bottom-right-radius: 25px;
+        background-color: #EFEFEF;
+        display: flex;
+        justify-content: space-between;
+}
+
+.task__complete{
+    margin: 0;
+    transform:scale(4);
+    opacity:0.9;
+    cursor:pointer;
+    margin-top: 18px;
+    margin-left: 21px;
+}
+
+.task__btn-box button {
+width: 100%;
+border: none;
+height: 100%;
+padding: 0 1vw;
+border-top-right-radius: 25px;
+border-bottom-right-radius: 25px;
+}
+
+.task__btn-box button:active{
     background-color:#A0838F;
 }
