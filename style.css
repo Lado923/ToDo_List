@@ -16,7 +16,7 @@ html {
     min-height: 62vh;
     height: fit-content;
     width: 62vw; 
-    background-color:#D3927D;
+    background-color:#dfc2b8;;
     border-radius: 25px;
     margin:5vh auto;
     text-align: center;
@@ -31,18 +31,19 @@ html {
 
 @keyframes popup {
     from{
-        height: 1vmin;
-        width: 1vmin;
+        opacity: 0;
     }
     to {
-        height: 62vh;
-        width: 62vw;  
+opacity: 1;
     }
 }
 
 h1 {
-color:#D3927D;
+color:#dfc2b8;;
 text-align: center;
+font-family: 'RobotoCondensed-Regular';
+font-size: 40px;
+margin-top: 40px;
 }
 
 .tasks__container {
@@ -61,7 +62,8 @@ text-align: center;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 10px;
+    margin-top: 20px;
+    
 }
 
 .tasks__input input{
@@ -74,6 +76,7 @@ text-align: center;
     outline:none;
     font-size: 4vmin;
     font-family: 'RobotoCondensed-Regular';
+    font-size: 20px;
 }
 
 .tasks__input input::placeholder{
@@ -87,17 +90,37 @@ text-align: center;
     padding: 0 1vw;
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
+    font-size: 20px;
+    font-family: 'RobotoCondensed-Regular';
 }
 
 .tasks__input button:active{
-    background-color:#D3927D;
+    background-color:#dfc2b8;;
 }
 
 /* styles for tasks */
 
+.tasks__inner {
+    max-height: calc(62vh - 100px);
+    overflow-y: auto;
+    width: 70%;
+    margin: 0 auto;
+    padding-left: 12px;
+}
+
+.tasks__inner::-webkit-scrollbar{
+    background-color: #dfc2b8;
+}
+
+.tasks__inner::-webkit-scrollbar-thumb{
+    background-color: #ecdfda;
+    border-radius: 25px;
+}
+
+
 .tasks-list__item {
-    height: 100px;
-    width: 62%;
+    height: 50px;
+    width: 90%;
     background-color: white;
     border-radius: 25px;
     margin:0 auto;
@@ -117,6 +140,9 @@ font-size: 20px;
 font-family: 'RobotoCondensed-Regular';
 hyphens:auto;
 word-break: break-all;
+padding-top: 27px;
+text-align: left;
+
 }
 
 .task__btn-box {
@@ -131,7 +157,7 @@ word-break: break-all;
 
 .task__complete{
     margin: 0;
-    transform: scale(2,4.7);
+    transform: scale(2.9);
     opacity:0.9;
     cursor:pointer;
     margin-top: 18px;
@@ -145,10 +171,12 @@ height: 100%;
 padding: 0 1vw;
 border-top-right-radius: 25px;
 border-bottom-right-radius: 25px;
+font-family: 'RobotoCondensed-Regular';
+font-size: 20px;
 }
 
 .task__btn-box button:active{
-    background-color:#D3927D;
+    background-color:#dfc2b8;
 }
 
 /* styles for checked tasks */
@@ -170,18 +198,20 @@ border-bottom-right-radius: 25px;
     display: inline-block;
     width: 22px;
     height: 22px;
-    margin: 39px 0 0 8px;
+    margin: 14px 0 0 13px;
     padding: 0;
     vertical-align: top;
     outline: none;
     transition: background 0.3s ease;
-    background: url(assets/checkbox-1.png) 0 0 no-repeat;
+    background: url(assets/checkbox_1.svg) 0 0 no-repeat;
     cursor: pointer;
+    background-size: cover;
 }
  
 /* Checked */
 .checkbox-other input[type=checkbox]:checked {
-	background-image: url(assets/checkbox-2.png);
+	background-image: url(assets/checkbox.svg);
+    background-size: cover;
 }
  
 /* Focus */

@@ -1,0 +1,14 @@
+<svg width="50" height="50" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <g id="svg_1" fill="#000000" transform="translate(0,50) scale(0.10000000149011612,-0.10000000149011612) ">
+   <path fill="#cecece" id="svg_2" d="m62,437c-21,-22 -22,-33 -22,-188c0,-221 -12,-209 211,-209c221,0 209,-12 209,211c0,221 12,209 -211,209c-160,0 -166,-1 -187,-23zm362,-13c24,-23 24,-325 0,-348c-23,-24 -325,-24 -348,0c-24,23 -24,325 0,348c23,24 325,24 348,0z"/>
+   <path fill="#cecece" id="svg_3" d="m305,274c-32,-38 -62,-73 -66,-78c-4,-5 -27,8 -50,28c-23,20 -45,34 -48,31c-5,-5 79,-95 89,-95c11,0 141,161 138,171c-2,6 -30,-20 -63,-57z"/>
+  </g>
+ </g>
+</svg>
