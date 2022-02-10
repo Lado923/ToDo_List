@@ -96,7 +96,7 @@ text-align: center;
 /* styles for tasks */
 
 .tasks-list__item {
-    height: 50px;
+    height: 100px;
     width: 62%;
     background-color: white;
     border-radius: 25px;
@@ -110,11 +110,13 @@ text-align: center;
 .task__description{
 width: 62%;
 height: 100%;
-padding: 0 1vw;
+padding: 0 2vw;
 border-top-left-radius: 25px;
 border-bottom-left-radius: 25px;
-font-size: 4vmin;
+font-size: 20px;
 font-family: 'RobotoCondensed-Regular';
+hyphens:auto;
+word-break: break-all;
 }
 
 .task__btn-box {
@@ -129,7 +131,7 @@ font-family: 'RobotoCondensed-Regular';
 
 .task__complete{
     margin: 0;
-    transform:scale(4);
+    transform: scale(2,4.7);
     opacity:0.9;
     cursor:pointer;
     margin-top: 18px;
@@ -147,4 +149,78 @@ border-bottom-right-radius: 25px;
 
 .task__btn-box button:active{
     background-color:#D3927D;
+}
+
+/* styles for checked tasks */
+
+.tasks-list__item.checked {
+    opacity: 70%;
+}
+
+/* styles for checkbox */
+
+.checkbox-other {
+	display: block;
+	margin: 0 0 10px 0;
+	line-height: 22px;  
+}
+.checkbox-other input[type=checkbox] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    margin: 39px 0 0 8px;
+    padding: 0;
+    vertical-align: top;
+    outline: none;
+    transition: background 0.3s ease;
+    background: url(assets/checkbox-1.png) 0 0 no-repeat;
+    cursor: pointer;
+}
+ 
+/* Checked */
+.checkbox-other input[type=checkbox]:checked {
+	background-image: url(assets/checkbox-2.png);
+}
+ 
+/* Focus */
+.focused input[type=checkbox] {
+	box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+ 
+/* Hover */
+.checkbox-other input[type=checkbox]:hover {
+	filter: brightness(110%);
+}
+ 
+/* Active */
+.checkbox-other input[type=checkbox]:active {
+	filter: brightness(80%);
+}
+ 
+/* Disabled */
+.checkbox-other input[type=checkbox]:disabled {
+	color: #666;
+	cursor: default;
+}
+.checkbox-other input[type=checkbox]:disabled {
+	filter: grayscale(100%);
+	opacity: 0.6;
+}
+
+/* styles for delite tasks */
+
+.delition {
+    animation-duration: 0.5s;
+    animation-name: delOpacity;
+}
+
+@keyframes delOpacity {
+    from{
+        opacity: 1;
+    }
+    to {
+        opacity: 0; 
+    }
 }

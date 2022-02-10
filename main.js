@@ -14,19 +14,25 @@ function Task (description) {
 
 const createTemplate = (task, index) => {
 return `
-        <div class="tasks-list__item ${task.completed ? 'checked' : ''}">
+        <div class="tasks-list__item ${task.completed ? 'checked' : ''} ${task.deleted ? 'delition' : ''}">
              <div class="task__description">${task.description}</div>
              <div class="task__btn-box">
+             <label class="checkbox-other">
                  <input onclick="completeTask(${index})" type="checkbox" class="task__complete" ${task.completed ? 'checked' : ''}> 
-                 <button id="del-tasks__btn">Del</button>
+                 </label>
+                 <button onclick="deleteTask(${index})" id="del-tasks__btn">Del</button>
              </div>
         </div>
        `
 }
 
+
+
+
     const fillHtmlList = () => {
     todoBox.innerHTML = '';
     if (tasks.length > 0) {
+        filterTasks();
         tasks.forEach((item, index) => {
             todoBox.innerHTML += createTemplate(item, index)
         });
@@ -60,4 +66,11 @@ fillHtmlList();
 todoInput.value = '';
 })
 
-console.log(tasks);
+const deleteTask = index => {
+    todoItemElems[index].classList.add('delition');
+setTimeout(() =>{
+    tasks.splice(index, 1);
+    updateLocal();
+fillHtmlList();
+}, 500)
+}
