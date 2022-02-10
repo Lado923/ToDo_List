@@ -26,7 +26,11 @@ return `
        `
 }
 
-
+const filterTasks = () =>{
+    const activeTasks = tasks.length && tasks.filter(item => item.completed == false);
+    const completedTasks = tasks.length && tasks.filter(item => item.completed == true);
+    tasks = [...activeTasks,...completedTasks];
+}
 
 
     const fillHtmlList = () => {
